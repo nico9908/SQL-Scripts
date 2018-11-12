@@ -1,0 +1,29 @@
+SELECT PetBreed
+FROM PET;
+
+SELECT COUNT (*) AS NumberOfPets
+FROM PET
+
+SELECT OwnerLastName, OwnerFirstName, OwnerEmail
+FROM PET_OWNER
+Where OwnerPhone = ' ' ;
+
+SELECT DISTINCT PetBreed, PetType, PetDOB
+FROM PET
+WHERE PetType = 'dog' ;
+
+SELECT PetID, PetName, PetType,PetBreed, PetDOB, PetWeight, OwnerID
+FROM PET
+
+SELECT OwnerLastName, OwnerFirstName, OwnerEmail
+FROM PET_OWNER
+WHERE OwnerEmail LIKE '%somewhere.com' ;
+
+SELECT DISTINCT PetBreed, PetType, PetDOB
+FROM PET
+WHERE PetType = 'dog'
+AND PetBreed = 'Std. Poodle' ;
+
+SELECT DISTINCT PetName, PetBreed, PetType
+FROM PET
+WHERE PetType NOT IN ('cat', 'dog', 'fish');
