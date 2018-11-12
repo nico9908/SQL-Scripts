@@ -24,9 +24,9 @@ CREATE TABLE LINE_ITEM (
 	Total				Float				NOT NULL,
 	CONSTRAINT			LINE_ITEM_PK			PRIMARY KEY(InvoiceNumber, LineNumber),
 	CONSTRAINT			InvoiceNumber_FK		FOREIGN KEY	(InvoiceNumber)
-									REFERENCES INVOICE (InvoiceNumber)
-									ON UPDATE CASCADE,
+								REFERENCES INVOICE (InvoiceNumber)
+								ON UPDATE CASCADE,
 	CONSTRAINT			ProductNumber_FK		FOREIGN KEY (ProductNumber)
-									REFERENCES PRODUCT (ProductNumber)
-									ON UPDATE CASCADE
+								REFERENCES PRODUCT (ProductNumber)
+								ON UPDATE CASCADE
 	);
