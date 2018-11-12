@@ -8,15 +8,15 @@ CREATE TABLE PET_OWNER (
 	);
 
 CREATE TABLE PET (
-	PetID				Int		NOT NULL,
-	PetName				NVarChar(25)	NOT NULL,
-	PetType				NVarChar(25)	NOT NULL,
-	PetBreed			NVarChar(25)	NOT NULL,
-	PetDOB				DateTime2	NOT NULL,
-	PetWeight			Float		NOT NULL,
-	OwnerID				Int		NOT NULL,
-	CONSTRAINT			PET_PK		PRIMARY KEY	(PetID),
-	CONSTRAINT			OWNER_FK	FOREIGN KEY (OwnerID)
+	PetID			Int			NOT NULL,
+	PetName			NVarChar(25)		NOT NULL,
+	PetType			NVarChar(25)		NOT NULL,
+	PetBreed		NVarChar(25)		NOT NULL,
+	PetDOB			DateTime2		NOT NULL,
+	PetWeight		Float			NOT NULL,
+	OwnerID			Int			NOT NULL,
+	CONSTRAINT		PET_PK			PRIMARY KEY (PetID),
+	CONSTRAINT		OWNER_FK		FOREIGN KEY (OwnerID)
 							REFERENCES PET_OWNER(OwnerID)
 							ON UPDATE CASCADE
 	);
