@@ -1,0 +1,35 @@
+CREATE TABLE SEMINAR (
+	SeminarID			Int						NOT NULL,
+	SeminarDate			DateTime2				NOT NULL,
+	Location			NVarChar(30)			NOT NULL,
+	SeminarTitle		NVarChar(25)			NOT NULL,
+	CONSTRAINT			SEMINAR_PK				PRIMARY KEY (SeminarID)
+	);
+
+CREATE TABLE CUSTOMER (
+	CustomerID			Int						NOT NULL,
+	FirstName			NVarChar(25)			NOT NULL,
+	LastName			NVarChar(25)			NOT NULL,
+	Street				NVarChar(50)			NOT NULL,
+	Zip					Int						NOT NULL,
+	CONSTRAINT			CUSTOMER_PK				PRIMARY KEY (CustomerID)
+	);
+
+CREATE TABLE ZIP_CITY (
+	Zip					Int						NOT NULL,
+	City				NVarChar(30)			NOT NULL,
+	CONSTRAINT			ZIP_CITY_PK				PRIMARY KEY (Zip, City)
+	);
+
+
+CREATE TABLE SEMINAR_CUSTOMER (
+	SeminarID			Int						NOT NULL,
+	CustomerID			Int						NOT NULL,
+	CONSTRAINT			SEMINAR_CUSTOMER_PK		PRIMARY KEY (SeminarID, CustomerID),
+	CONSTRAINT			SEMINARID_FK			FOREIGN KEY (SeminarID)
+												REFERENCES SEMINAR (SeminarID)
+												ON UPDATE CASCADE,
+	CONSTRAINT			CUSTOMERID_FK			FOREIGN KEY (CustomerID)
+												REFERENCES CUSTOMER (CustomerID)
+												ON UPDATE CASCADE
+	);
