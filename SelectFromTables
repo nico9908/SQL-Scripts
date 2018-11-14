@@ -27,3 +27,50 @@ AND PetBreed = 'Std. Poodle' ;
 SELECT DISTINCT PetName, PetBreed, PetType
 FROM PET
 WHERE PetType NOT IN ('cat', 'dog', 'fish');
+
+SELECT PetName, PetBreed
+FROM PET
+ORDER BY PetName;
+
+SELECT COUNT (DISTINCT PetBreed) AS PetBreeds
+FROM PET
+
+/*øvelse 3.31*/
+SELECT	MIN (PetWeight) AS MinimumPetWeight,
+		MAX (PetWeight) AS MaximumPetWeight,
+		AVG (PetWeight) AS AveragePetWeight
+FROM PET;
+
+/*øvelse 3.32*/
+SELECT PetBreed, AVG (PetWeight) AS AveragePetWeight
+FROM PET
+GROUP BY PetBreed;
+
+/*øvelse 3.33*/
+SELECT PetBreed, AVG (PetWeight) AS AveragePetWeight
+FROM PET
+GROUP BY PetBreed
+HAVING COUNT (*) >= 2;
+
+/*øvelse 3.34*/
+SELECT PetBreed, AVG (PetWeight) AS AveragePetWeight
+FROM PET
+WHERE Petbreed <>'Unknown'
+GROUP BY PetBreed
+HAVING COUNT (*) >= 2;
+
+/*øvelse 3.35*/
+SELECT OwnerLastName, OwnerFirstName, OwnerEmail
+FROM PET_OWNER
+WHERE OwnerID IN
+		(SELECT OwnerID
+		 FROM	PET
+		 WHERE	PetType = 'Cat');
+
+/*øvelse 3.36*/
+SELECT OwnerLastName, OwnerFirstName, OwnerEmail
+FROM PET_OWNER
+WHERE OwnerID IN
+		(SELECT OwnerID
+		 FROM	PET
+		 WHERE	PetName = 'Teddy');
