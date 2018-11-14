@@ -2,7 +2,7 @@ CREATE TABLE PET_OWNER (
 	OwnerID			Int			NOT NULL,
 	OwnerLastName		NVarChar(25)		NOT NULL,
 	OwnerFirstName		NVarChar(25)		NOT NULL,
-	OwnerPhone		NVarChar(8)		NOT NULL,
+	OwnerPhone		NVarChar(12)		NOT NULL,
 	OwnerEmail		NVarChar(100)		NOT NULL,
 	CONSTRAINT		PET_OWNER_PK		PRIMARY KEY(OwnerID)
 	);
