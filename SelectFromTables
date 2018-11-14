@@ -37,8 +37,8 @@ FROM PET
 
 /*øvelse 3.31*/
 SELECT	MIN (PetWeight) AS MinimumPetWeight,
-		MAX (PetWeight) AS MaximumPetWeight,
-		AVG (PetWeight) AS AveragePetWeight
+	MAX (PetWeight) AS MaximumPetWeight,
+	AVG (PetWeight) AS AveragePetWeight
 FROM PET;
 
 /*øvelse 3.32*/
